@@ -28,7 +28,7 @@ running on 5× M5Stack Atom Echo voice satellites in a Home Assistant household.
 ## Quickstart (5 minutes)
 
 1. Open the notebook in Colab:
-   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YOUR_GH_USERNAME/microwakeword-trainer/blob/main/notebooks/microWakeWord_train_any_wakeword.ipynb)
+   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/alfiedennen/microwakeword-trainer/blob/main/notebooks/microWakeWord_train_any_wakeword.ipynb)
 
 2. **Runtime → Change runtime type → A100 GPU + High-RAM** *(non-negotiable — see Gotchas)*
 
