@@ -1,0 +1,50 @@
+# Secrets — never commit these
+.env
+.envrc
+*.env
+*token*.json
+*credential*
+*.key
+*.pem
+.elevenlabs.env
+
+# Generated outputs (large, regeneratable)
+elevenlabs_samples/
+piper_samples/
+piper_voices/
+real_recordings/
+recordings/
+confusables/
+generated_samples/
+generated_augmented_features/
+real_recording_features/
+confusable_features/
+negative_datasets/
+trained_models/
+mit_rirs/
+fma_16k/
+audioset_16k/
+data_bundle.zip
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Notebook execution junk
+.ipynb_checkpoints/
+
+# Local audit/scratch
+*.bak
+*.bak.*
+_drive_token.json
+_*.log
