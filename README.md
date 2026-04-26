@@ -1,12 +1,29 @@
-# microWakeWord Community Trainer
+# microWakeWord Community Trainer — Custom wake words for Home Assistant + ESPHome
 
-Train a custom wake word for ESPHome `micro_wake_word` devices (M5Stack Atom Echo,
-Voice PE, etc) — single Colab notebook, two modes, no kernel-restart dance, no
-local GPU required.
+Train your own custom wake word for **Home Assistant Voice**, **ESPHome
+`micro_wake_word`**, **M5Stack Atom Echo**, **Nabu Casa Voice PE**, and any
+other ESPHome-based voice satellite. One Google Colab notebook, two modes
+("Piper-generates-everything" or "bring your own samples"), no kernel-restart
+dance, no local GPU required.
+
+**Train**, **deploy**, and **iterate** custom wake words for your **HA voice
+assistant** without paying for cloud STT or surrendering your audio to
+Google/Amazon. Privacy-first home automation that triggers only on YOUR phrase.
+
+If you've struggled with the official microWakeWord training notebook
+("ModuleNotFoundError: microwakeword.audio", "Failed to allocate tensors",
+"silent training failure", "OOM on T4"), this repo has the working fixes
+baked in.
+
+**Tags**: home-assistant, esphome, micro-wake-word, m5stack-atom-echo,
+voice-pe, nabu-casa, custom-wake-word, wake-word-detection, on-device-ml,
+tensorflow-lite, tflite-micro, esp32, voice-assistant, smart-home, openwakeword,
+keyword-spotting, openhomefoundation
 
 This repo is a community-friendly wrapper around [kahrendt/microWakeWord](https://github.com/kahrendt/microWakeWord)
-with all the gotchas that bit me during my own "Hey Harold" training already
-patched. See [examples/hey_harold/](examples/hey_harold/) for the deployed model.
+with every gotcha from the production deployment of "Hey Harold" already
+patched. See [examples/hey_harold/](examples/hey_harold/) for the working model
+running on 5× M5Stack Atom Echo voice satellites in a Home Assistant household.
 
 ## Quickstart (5 minutes)
 
@@ -127,8 +144,29 @@ are all applied; documenting them so you don't re-introduce them.
 
 ## Hardware tested
 
-- M5Stack Atom Echo (ESP32, 4 MB flash, 320 KB SRAM) — proven working
-- Other ESPHome `micro_wake_word`-capable devices likely fine; report back
+- **M5Stack Atom Echo** (ESP32, 4 MB flash, 320 KB SRAM) — proven working,
+  5 units running in production household
+- Other ESPHome `micro_wake_word`-capable devices likely fine — please open
+  an issue with results:
+  - Nabu Casa **Voice Preview Edition** (Voice PE)
+  - **ESP32-S3 Box / Box-3** (Espressif)
+  - Generic **ESP32 + I2S microphone** boards
+  - **Home Assistant Voice** Beta hardware
+
+## Why train your own wake word for Home Assistant?
+
+The built-in wake words (`okay_nabu`, `hey_jarvis`, `alexa`) work well, but a
+**custom wake word** lets you:
+
+- **Stop the cross-talk** with Alexa/Google devices in the same room
+- **Reflect your household's identity** — name your assistant after a person,
+  pet, or character
+- **Avoid colliding** with the assistants on your phones (Siri, Google
+  Assistant)
+- **Train on your accent / household voices** for higher recall, especially
+  for non-US-English speakers
+- **Truly local** — wake-word detection happens entirely on the ESP32, no
+  audio leaves the device until *after* the wake word fires
 
 ## Acknowledgements
 
